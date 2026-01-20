@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rana Muhammad Umair | Professional Gamer</title>
+    <!-- Google Fonts: Orbitron for Gaming Vibe -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #0b0b0d;
+            --secondary-bg: #16161a;
+            --neon-purple: #9b30ff;
+            --dark-purple: #4b0082;
+            --text-color: #e0e0e0;
+            --glow: 0 0 15px rgba(155, 48, 255, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            font-family: 'Rajdhani', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand-name {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- Header & Nav --- */
+        header {
+            background: rgba(11, 11, 13, 0.95);
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--dark-purple);
+            box-shadow: var(--glow);
+        }
+
+        .brand-name {
+            font-size: 1.5rem;
+            color: var(--neon-purple);
+            text-shadow: var(--glow);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--neon-purple);
+            text-shadow: var(--glow);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            animation: glowText 2s infinite alternate;
+        }
+
+        @keyframes glowText {
+            from { text-shadow: 0 0 10px #fff, 0 0 20px var(--neon-purple); }
+            to { text-shadow: 0 0 20px #fff, 0 0 40px var(--neon-purple); }
+        }
+
+        .btn-neon {
+            padding: 15px 40px;
+            background: transparent;
+            border: 2px solid var(--neon-purple);
+            color: var(--neon-purple);
+            font-family: 'Orbitron';
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .btn-neon:hover {
+            background: var(--neon-purple);
+            color: #fff;
+            box-shadow: 0 0 30px var(--neon-purple);
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--neon-purple);
+        }
+
+        /* --- About Section --- */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: var(--secondary-bg);
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 5px solid var(--neon-purple);
+        }
+
+        .about-text h2 { margin-bottom: 20px; }
+
+        /* --- Games Grid --- */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .game-card {
+            background: var(--secondary-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.4s;
+            border: 1px solid transparent;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-purple);
+            box-shadow: var(--glow);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .game-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* --- Videos Section --- */
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .video-box {
+            background: #000;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid var(--dark-purple);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .video-box::after {
+            content: '▶';
+            font-size: 3rem;
+            color: var(--neon-purple);
+            cursor: pointer;
+        }
+
+        /* --- Contact Form --- */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--secondary-bg);
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #0b0b0d;
+            border: 1px solid var(--dark-purple);
+            color: #fff;
+            font-family: inherit;
+        }
+
+        .contact-form input:focus {
+            outline: none;
+            border-color: var(--neon-purple);
+            box-shadow: 0 0 10px var(--neon-purple);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #050505;
+            border-top: 1px solid var(--dark-purple);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 15px; }
+            nav ul { margin-top: 15px; }
+            nav ul li { margin: 0 10px; }
+            .hero h1 { font-size: 2.5rem; }
+            .about-content { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-name">Rana Muhammad Umair</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#highlights">Highlights</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>LEVEL UP YOUR GAME</h1>
+        <p>Pro Gameplay | Tech Reviews | Gaming Community</p>
+        <a href="#games" class="btn-neon">Explore My Arena</a>
+    </section>
+
+    <section id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="section-title" style="text-align: left;">About Me</h2>
+                <p>Hello! I'm <strong>Rana Muhammad Umair</strong>, a passionate gamer and content creator. I specialize in high-octane PC gaming and tactical shooters. Whether I'm building mega-structures in Minecraft or surviving the streets of Los Santos, I'm always looking for the next challenge.</p>
+                <br>
+                <p>Join me on my journey as I showcase the best of the gaming world!</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=400&q=80" alt="Gamer Setup" style="border-radius: 15px; max-width: 100%; box-shadow: var(--glow);">
+        </div>
+    </section>
+
+    <section id="games">
+        <h2 class="section-title">Games I Play</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&w=600&q=80" alt="Minecraft">
+                <div class="game-info">
+                    <h3>Minecraft</h3>
+                    <p>Creative Builds & Survival</p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="GTA V">
+                <div class="game-info">
+                    <h3>GTA V</h3>
+                    <p>High Stakes & Heists</p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?auto=format&fit=crop&w=600&q=80" alt="PUBG">
+                <div class="game-info">
+                    <h3>PUBG</h3>
+                    <p>Battle Royale Champion</p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="PC Gaming">
+                <div class="game-info">
+                    <h3>PC Games</h3>
+                    <p>Latest AAA Titles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="highlights">
+        <h2 class="section-title">Videos & Highlights</h2>
+        <div class="video-container">
+            <div class="video-box"></div>
+            <div class="video-box"></div>
+            <div class="video-box"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Join The Squad</h2>
+        <div class="contact-form">
+            <form>
+                <input type="text" placeholder="Your Gamer Tag / Name" required>
+                <input type="email" placeholder="Your Email Address" required>
+                <textarea rows="5" placeholder="Your Message..."></textarea>
+                <button type="submit" class="btn-neon" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rana Muhammad Umair. Designed for the Next Gen.</p>
+    </footer>
+
+</body>
+</html>
